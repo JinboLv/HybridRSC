@@ -22,7 +22,7 @@
 
 ## Abstract
 
-Camera-based road surface classification requires accurate fine-grained recognition of surface condition, material, and unevenness under tight onboard compute budgets. We present HybridRSC, a compact four-stage family (T, S, M, and L; 1.54–8.75 M parameters) for 27-class road-patch classification. HybridRSC pairs high-resolution convolutional stages with two-dimensional gated depthwise-convolutional mixing and low-resolution full-map self-attention to capture local texture and broader spatial context at compact model scales. Evaluated across 25 compact models from eight families on the 49,500-patch official RSCD test split under a unified three-view protocol, HybridRSC-M (3.906 M) achieves 92.64% accuracy and 90.42% Macro-F1, improving over released RSPNet-L by 0.59 and 0.69 percentage points while lowering shared-session GPU batch-1 latency by 66.1% and unified end-to-end median latency by 51.1% on an RTX 5090. HybridRSC-L (8.754 M) reaches 92.94% accuracy and 90.82% Macro-F1, demonstrating favorable accuracy–efficiency trade-offs across compact budgets.
+Camera-based road surface classification requires accurate fine-grained recognition of surface condition, material, and unevenness under tight onboard compute budgets. We present HybridRSC, a compact four-stage family (T, S, M, and L; 1.54–8.75 M parameters) for 27-class road-patch classification. HybridRSC pairs high-resolution convolutional stages with two-dimensional gated depthwise-convolutional mixing and low-resolution full-map self-attention to capture local texture and broader spatial context at compact model scales. Evaluated across 25 compact models from eight families on the 49,500-patch official RSCD test split under a unified three-view protocol, HybridRSC-M (3.906 M) achieves 92.64% accuracy and 90.42% Macro-F1, improving over released RSPNet-L by 0.59 and 0.69 percentage points while lowering shared-session FP32 eager GPU batch-1 latency by 66.1% and unified end-to-end median latency by 51.1% on an RTX 5090. HybridRSC-L (8.754 M) reaches 92.94% accuracy and 90.82% Macro-F1, demonstrating favorable accuracy–efficiency trade-offs across compact budgets.
 
 ## Performance
 
@@ -102,10 +102,10 @@ Bold values mark the best displayed result within each parameter-budget group, i
 ### Class-wise recognition
 
 <p align="center">
-  <img src="assets/classwise_f1_difference.png" alt="Class-wise validation F1 differences between HybridRSC-M and RSPNet-L" width="540">
+  <img src="assets/classwise_f1_difference.png" alt="Class-wise test F1 differences between HybridRSC-M and RSPNet-L" width="540">
 </p>
 
-Per-class validation F1 differences between HybridRSC-M and released RSPNet-L on the same 19,860 road patches. Positive values indicate higher F1 for HybridRSC-M; negative values indicate higher F1 for RSPNet-L. Values are percentage-point differences.
+Per-class official-test F1 differences between HybridRSC-M and released RSPNet-L across all 49,500 road patches. Positive values indicate higher F1 for HybridRSC-M; negative values indicate higher F1 for RSPNet-L. Values are percentage-point differences.
 
 ## Installation
 
