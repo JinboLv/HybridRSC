@@ -1,7 +1,7 @@
 <div align="center">
 
 <h1>HybridRSC</h1>
-<h3>A Compact Gated CNN–Attention Network Family for Road Surface Classification</h3>
+<h3>Compact Gated CNN–Attention Networks for Fine-Grained Road Surface Classification</h3>
 
 <p>
   <a href="https://huggingface.co/jinbo2277/HybridRSC"><img src="assets/weights-badge.svg" alt="Hugging Face Weights"></a>
@@ -22,7 +22,7 @@
 
 ## Abstract
 
-Camera-based road surface classification requires accurate recognition of fine-grained appearance differences under limited model and inference budgets. We present HybridRSC, a compact network family for 27-class road-patch classification that combines high-resolution convolution, two-dimensional gated local mixing, and deep-stage self-attention to capture local texture and broader spatial context. Four width configurations, T/S/M/L, span 1.54–8.75 million parameters. We compare 25 compact models on RSCD under a common three-view inference protocol, evaluating recognition and inference efficiency jointly. On the 49,500-image official test split, HybridRSC-M achieves 92.64% accuracy and 90.42% Macro-F1 with 3.906M parameters, exceeding the released RSPNet-L checkpoint by 0.59 and 0.69 percentage points, respectively. In a shared RTX 5090 session, HybridRSC-M reduces batch-one GPU-input latency from 7.164 to 2.429 ms, a 66.1% reduction. HybridRSC-L achieves 92.94% accuracy and 90.82% Macro-F1 with 8.754M parameters. These results demonstrate favorable accuracy–efficiency trade-offs across compact parameter budgets for road surface classification. Code: [GitHub](https://github.com/JinboLv/HybridRSC).
+Camera-based road surface classification requires accurate fine-grained recognition of surface condition, material, and unevenness under tight onboard compute budgets. We present HybridRSC, a compact four-stage family (T, S, M, and L; 1.54–8.75 M parameters) for 27-class road-patch classification. HybridRSC pairs high-resolution convolutional stages with two-dimensional gated depthwise-convolutional mixing and low-resolution full-map self-attention to capture local texture and broader spatial context at compact model scales. Evaluated across 25 compact models from eight families on the 49,500-patch official RSCD test split under a unified three-view protocol, HybridRSC-M (3.906 M) achieves 92.64% accuracy and 90.42% Macro-F1, improving over released RSPNet-L by 0.59 and 0.69 percentage points while lowering shared-session GPU batch-1 latency by 66.1% and unified end-to-end median latency by 51.1% on an RTX 5090. HybridRSC-L (8.754 M) reaches 92.94% accuracy and 90.82% Macro-F1, demonstrating favorable accuracy–efficiency trade-offs across compact budgets. Code: [GitHub](https://github.com/JinboLv/HybridRSC).
 
 ## Performance
 
